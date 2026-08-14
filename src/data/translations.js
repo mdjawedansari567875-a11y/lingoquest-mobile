@@ -1,4 +1,3 @@
-// All code/keys stay in English. Only displayed VALUES change per language.
 export const LANGUAGES = [
   { code: "en", label: "English" },
   { code: "hi", label: "हिंदी" },
@@ -54,16 +53,15 @@ export const LANGUAGES = [
 ];
 
 export const UI_TEXT = {
-  en: { login: "Log In", signup: "Sign Up", email: "Email", password: "Password", name: "Name", points: "Points", leaderboard: "Leaderboard", playGame: "Play Translation Game", profile: "Profile", badges: "Badges", correct: "Correct! +10 points", wrong: "Wrong!", correctWas: "Correct answer was", selectLanguage: "Select App Language", continue: "Continue", back: "Back", save: "Save", searchLanguage: "Search language..." },
-  hi: { login: "लॉग इन करें", signup: "साइन अप करें", email: "ईमेल", password: "पासवर्ड", name: "नाम", points: "पॉइंट्स", leaderboard: "लीडरबोर्ड", playGame: "अनुवाद गेम खेलें", profile: "प्रोफाइल", badges: "बैज", correct: "सही! +10 पॉइंट्स", wrong: "गलत!", correctWas: "सही जवाब था", selectLanguage: "ऐप की भाषा चुनें", continue: "आगे बढ़ें", back: "वापस", save: "सेव करें", searchLanguage: "भाषा खोजें..." },
-  es: { login: "Iniciar sesión", signup: "Registrarse", email: "Correo", password: "Contraseña", name: "Nombre", points: "Puntos", leaderboard: "Clasificación", playGame: "Jugar juego de traducción", profile: "Perfil", badges: "Insignias", correct: "¡Correcto! +10 puntos", wrong: "¡Incorrecto!", correctWas: "La respuesta correcta era", selectLanguage: "Selecciona el idioma", continue: "Continuar", back: "Atrás", save: "Guardar", searchLanguage: "Buscar idioma..." },
-  fr: { login: "Connexion", signup: "S'inscrire", email: "E-mail", password: "Mot de passe", name: "Nom", points: "Points", leaderboard: "Classement", playGame: "Jouer au jeu de traduction", profile: "Profil", badges: "Badges", correct: "Correct ! +10 points", wrong: "Faux !", correctWas: "La bonne réponse était", selectLanguage: "Choisir la langue", continue: "Continuer", back: "Retour", save: "Enregistrer", searchLanguage: "Rechercher une langue..." },
+  en: { login: "Log In", signup: "Sign Up", email: "Email", password: "Password", name: "Name", points: "Points", leaderboard: "Leaderboard", playGame: "Play Translation Game", profile: "Profile", badges: "Badges", correct: "Correct! +10 points", wrong: "Wrong!", correctWas: "Correct answer was", selectLanguage: "Select App Language", continue: "Continue", back: "Back", save: "Save", searchLanguage: "Search language...", signOut: "Sign Out", welcome: "Welcome", sessionPoints: "Session", translateFrom: "Translate", rank: "Rank", status: "Status", active: "Active", banned: "Banned", bannedMessage: "Your account has been banned by admin.", editName: "Edit your name", saved: "Saved!" },
+  hi: { login: "लॉग इन करें", signup: "साइन अप करें", email: "ईमेल", password: "पासवर्ड", name: "नाम", points: "पॉइंट्स", leaderboard: "लीडरबोर्ड", playGame: "अनुवाद गेम खेलें", profile: "प्रोफाइल", badges: "बैज", correct: "सही! +10 पॉइंट्स", wrong: "गलत!", correctWas: "सही जवाब था", selectLanguage: "ऐप की भाषा चुनें", continue: "आगे बढ़ें", back: "वापस", save: "सेव करें", searchLanguage: "भाषा खोजें...", signOut: "साइन आउट", welcome: "स्वागत है", sessionPoints: "सेशन", translateFrom: "अनुवाद करें", rank: "रैंक", status: "स्थिति", active: "सक्रिय", banned: "बैन", bannedMessage: "आपका अकाउंट एडमिन द्वारा बैन कर दिया गया है।", editName: "अपना नाम बदलें", saved: "सेव हो गया!" },
+  es: { login: "Iniciar sesión", signup: "Registrarse", email: "Correo", password: "Contraseña", name: "Nombre", points: "Puntos", leaderboard: "Clasificación", playGame: "Jugar juego de traducción", profile: "Perfil", badges: "Insignias", correct: "¡Correcto! +10 puntos", wrong: "¡Incorrecto!", correctWas: "La respuesta correcta era", selectLanguage: "Selecciona el idioma", continue: "Continuar", back: "Atrás", save: "Guardar", searchLanguage: "Buscar idioma...", signOut: "Cerrar sesión", welcome: "Bienvenido", sessionPoints: "Sesión", translateFrom: "Traducir", rank: "Rango", status: "Estado", active: "Activo", banned: "Baneado", bannedMessage: "Tu cuenta ha sido baneada por el administrador.", editName: "Edita tu nombre", saved: "¡Guardado!" },
+  fr: { login: "Connexion", signup: "S'inscrire", email: "E-mail", password: "Mot de passe", name: "Nom", points: "Points", leaderboard: "Classement", playGame: "Jouer au jeu de traduction", profile: "Profil", badges: "Badges", correct: "Correct ! +10 points", wrong: "Faux !", correctWas: "La bonne réponse était", selectLanguage: "Choisir la langue", continue: "Continuer", back: "Retour", save: "Enregistrer", searchLanguage: "Rechercher une langue...", signOut: "Déconnexion", welcome: "Bienvenue", sessionPoints: "Session", translateFrom: "Traduire", rank: "Rang", status: "Statut", active: "Actif", banned: "Banni", bannedMessage: "Votre compte a été banni par l'administrateur.", editName: "Modifier votre nom", saved: "Enregistré !" },
 };
 
 // Word bank organized by difficulty tier. Add more entries here to grow the game.
 // difficulty: 1 = easy, 2 = medium, 3 = hard
 export const GAME_DATA = [
-  // ---- Hindi <-> English ----
   { lang: "hi", from: "hi", to: "en", difficulty: 1, word: "पानी", answer: "Water", options: ["Water", "Fire", "Air", "Earth"] },
   { lang: "hi", from: "hi", to: "en", difficulty: 1, word: "किताब", answer: "Book", options: ["Book", "Pen", "Table", "Chair"] },
   { lang: "hi", from: "hi", to: "en", difficulty: 1, word: "दोस्त", answer: "Friend", options: ["Enemy", "Friend", "Teacher", "Stranger"] },
@@ -74,31 +72,25 @@ export const GAME_DATA = [
   { lang: "hi", from: "hi", to: "en", difficulty: 2, word: "अनुभव", answer: "Experience", options: ["Experience", "Ignorance", "Silence", "Distance"] },
   { lang: "hi", from: "hi", to: "en", difficulty: 3, word: "अपरिहार्य", answer: "Inevitable", options: ["Inevitable", "Optional", "Temporary", "Reversible"] },
   { lang: "hi", from: "hi", to: "en", difficulty: 3, word: "विवेकपूर्ण", answer: "Prudent", options: ["Careless", "Prudent", "Foolish", "Reckless"] },
-  // ---- English <-> Hindi ----
   { lang: "en", from: "en", to: "hi", difficulty: 1, word: "Water", answer: "पानी", options: ["आग", "पानी", "हवा", "मिट्टी"] },
   { lang: "en", from: "en", to: "hi", difficulty: 1, word: "House", answer: "घर", options: ["घर", "कार", "पेड़", "सड़क"] },
   { lang: "en", from: "en", to: "hi", difficulty: 1, word: "Sun", answer: "सूरज", options: ["चाँद", "सूरज", "तारा", "बादल"] },
   { lang: "en", from: "en", to: "hi", difficulty: 2, word: "Courage", answer: "साहस", options: ["साहस", "डर", "गुस्सा", "उदासी"] },
   { lang: "en", from: "en", to: "hi", difficulty: 3, word: "Reluctant", answer: "अनिच्छुक", options: ["अनिच्छुक", "उत्साहित", "निश्चित", "प्रसन्न"] },
-  // ---- English <-> Spanish ----
   { lang: "en", from: "en", to: "es", difficulty: 1, word: "House", answer: "Casa", options: ["Casa", "Perro", "Gato", "Agua"] },
   { lang: "en", from: "en", to: "es", difficulty: 1, word: "Water", answer: "Agua", options: ["Agua", "Fuego", "Aire", "Tierra"] },
   { lang: "en", from: "en", to: "es", difficulty: 2, word: "Freedom", answer: "Libertad", options: ["Libertad", "Prisión", "Silencio", "Tristeza"] },
   { lang: "en", from: "en", to: "es", difficulty: 3, word: "Nevertheless", answer: "Sin embargo", options: ["Sin embargo", "Por lo tanto", "Además", "A menudo"] },
-  // ---- English <-> French ----
   { lang: "en", from: "en", to: "fr", difficulty: 1, word: "Bread", answer: "Pain", options: ["Pain", "Eau", "Lait", "Fromage"] },
   { lang: "en", from: "en", to: "fr", difficulty: 1, word: "House", answer: "Maison", options: ["Maison", "Voiture", "Arbre", "Route"] },
   { lang: "en", from: "en", to: "fr", difficulty: 2, word: "Knowledge", answer: "Connaissance", options: ["Connaissance", "Ignorance", "Silence", "Distance"] },
   { lang: "en", from: "en", to: "fr", difficulty: 3, word: "Nonetheless", answer: "Néanmoins", options: ["Néanmoins", "Cependant", "Souvent", "Rarement"] },
-  // ---- English <-> German ----
   { lang: "en", from: "en", to: "de", difficulty: 1, word: "House", answer: "Haus", options: ["Haus", "Auto", "Baum", "Straße"] },
   { lang: "en", from: "en", to: "de", difficulty: 2, word: "Freedom", answer: "Freiheit", options: ["Freiheit", "Gefängnis", "Stille", "Traurigkeit"] },
-  // ---- Spanish <-> English ----
   { lang: "es", from: "es", to: "en", difficulty: 1, word: "Gato", answer: "Cat", options: ["Dog", "Cat", "Bird", "Fish"] },
   { lang: "es", from: "es", to: "en", difficulty: 2, word: "Esperanza", answer: "Hope", options: ["Hope", "Fear", "Anger", "Doubt"] },
 ];
 
-// Picks 10 questions matching the selected app language, scaled by player's points level.
 export function getGameSession(profileLanguage = "en", points = 0, count = 10) {
   let difficulty = 1;
   if (points >= 500) difficulty = 3;
@@ -108,7 +100,6 @@ export function getGameSession(profileLanguage = "en", points = 0, count = 10) {
     (q) => q.lang === profileLanguage && q.difficulty <= difficulty
   );
   if (pool.length === 0) {
-    // fallback: any language pair at or below difficulty
     pool = GAME_DATA.filter((q) => q.difficulty <= difficulty);
   }
   if (pool.length === 0) pool = GAME_DATA;
