@@ -9,44 +9,48 @@ import SignupScreen from "../screens/SignupScreen";
 import HomeScreen from "../screens/HomeScreen";
 import GameScreen from "../screens/GameScreen";
 import LeaderboardScreen from "../screens/LeaderboardScreen";
+import ProfileScreen from "../screens/ProfileScreen";
 
 const Stack = createNativeStackNavigator();
 
-export default function AppNavigator({ appLanguage, setAppLanguage, hasPickedLanguage }) {
-  const { user, loadingAuth } = useAuth();
+export default function AppNavigator() {
+  const { user, profile, loadingAuth } = useAuth();
 
   if (loadingAuth) return null;
 
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {!hasPickedLanguage ? (
-          <Stack.Screen name="LanguageSelect">
-            {(props) => <LanguageSelectScreen {...props} setAppLanguage={setAppLanguage} />}
-          </Stack.Screen>
-        ) : !user ? (
+        {!user ? (
           <>
             <Stack.Screen name="Login">
-              {(props) => <LoginScreen {...props} appLanguage={appLanguage} />}
+              {(props) => <LoginScreen {...props} appLanguage="en" />}
             </Stack.Screen>
             <Stack.Screen name="Signup">
-              {(props) => <SignupScreen {...props} appLanguage={appLanguage} />}
+              {(props) => <SignupScreen {...props} appLanguage="en" />}
             </Stack.Screen>
           </>
+        ) : !profile ? null : !profile.language ? (
+          <Stack.Screen name="LanguageSelect">
+            {(props) => <LanguageSelectScreen {...props} />}
+          </Stack.Screen>
         ) : (
           <>
             <Stack.Screen name="Home">
-              {(props) => <HomeScreen {...props} appLanguage={appLanguage} />}
+              {(props) => <HomeScreen {...props} appLanguage={profile.language} />}
             </Stack.Screen>
             <Stack.Screen name="Game">
-              {(props) => <GameScreen {...props} appLanguage={appLanguage} />}
+              {(props) => <GameScreen {...props} appLanguage={profile.language} />}
             </Stack.Screen>
             <Stack.Screen name="Leaderboard">
-              {(props) => <LeaderboardScreen {...props} appLanguage={appLanguage} />}
+              {(props) => <LeaderboardScreen {...props} appLanguage={profile.language} />}
+            </Stack.Screen>
+            <Stack.Screen name="Profile">
+              {(props) => <ProfileScreen {...props} appLanguage={profile.language} />}
             </Stack.Screen>
           </>
         )}
       </Stack.Navigator>
     </NavigationContainer>
   );
-                }
+}
