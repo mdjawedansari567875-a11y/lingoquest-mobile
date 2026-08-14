@@ -20,8 +20,12 @@ export default function HomeScreen({ navigation, appLanguage }) {
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity style={styles.settingsBtn} onPress={() => navigation.navigate("Settings")}>
+        <Text style={styles.iconText}>⚙️</Text>
+      </TouchableOpacity>
+
       <TouchableOpacity style={styles.profileBtn} onPress={() => navigation.navigate("Profile")}>
-        <Text style={styles.profileIcon}>👤</Text>
+        <Text style={styles.iconText}>👤</Text>
       </TouchableOpacity>
 
       <Text style={styles.welcome}>👋 {t.welcome}, {profile?.name || "..."}</Text>
@@ -55,8 +59,9 @@ export default function HomeScreen({ navigation, appLanguage }) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 24, backgroundColor: "#fff", justifyContent: "center" },
+  settingsBtn: { position: "absolute", top: 50, left: 24 },
   profileBtn: { position: "absolute", top: 50, right: 24 },
-  profileIcon: { fontSize: 28 },
+  iconText: { fontSize: 28 },
   welcome: { fontSize: 22, fontWeight: "bold", marginBottom: 20, textAlign: "center" },
   pointsBox: { backgroundColor: "#e8ffe0", padding: 20, borderRadius: 16, alignItems: "center", marginBottom: 20 },
   pointsLabel: { fontSize: 16, color: "#58a700" },
