@@ -4,12 +4,14 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useAuth } from "../context/AuthContext";
 
 import LanguageSelectScreen from "../screens/LanguageSelectScreen";
+import ChangeLanguageScreen from "../screens/ChangeLanguageScreen";
 import LoginScreen from "../screens/LoginScreen";
 import SignupScreen from "../screens/SignupScreen";
 import HomeScreen from "../screens/HomeScreen";
 import GameScreen from "../screens/GameScreen";
 import LeaderboardScreen from "../screens/LeaderboardScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import SettingsScreen from "../screens/SettingsScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -47,6 +49,12 @@ export default function AppNavigator() {
             </Stack.Screen>
             <Stack.Screen name="Profile">
               {(props) => <ProfileScreen {...props} appLanguage={profile.language} />}
+            </Stack.Screen>
+            <Stack.Screen name="Settings">
+              {(props) => <SettingsScreen {...props} appLanguage={profile.language} />}
+            </Stack.Screen>
+            <Stack.Screen name="ChangeLanguage">
+              {(props) => <ChangeLanguageScreen {...props} appLanguage={profile.language} />}
             </Stack.Screen>
           </>
         )}
