@@ -3,6 +3,8 @@ import { View, Text, TouchableOpacity, StyleSheet, Linking } from "react-native"
 import { useAuth } from "../context/AuthContext";
 import { UI_TEXT } from "../data/translations";
 
+const SUPPORT_EMAIL = "carfambuilds@gmail.com";
+
 export default function SettingsScreen({ navigation, appLanguage }) {
   const t = UI_TEXT[appLanguage] || UI_TEXT.en;
   const { signOut } = useAuth();
@@ -24,11 +26,11 @@ export default function SettingsScreen({ navigation, appLanguage }) {
 
       <TouchableOpacity
         style={styles.row}
-        onPress={() => Linking.openURL("mailto:support@lingoquest.app")}
+        onPress={() => Linking.openURL(`mailto:${SUPPORT_EMAIL}?subject=LingoQuest Support`)}
       >
         <Text style={styles.rowText}>✉️ {t.contactSupport}</Text>
       </TouchableOpacity>
-      <Text style={styles.supportHint}>{t.supportMessage} support@lingoquest.app</Text>
+      <Text style={styles.supportHint}>{t.supportMessage} {SUPPORT_EMAIL}</Text>
 
       <TouchableOpacity style={styles.logoutBtn} onPress={signOut}>
         <Text style={styles.logoutText}>🚪 {t.logout}</Text>
