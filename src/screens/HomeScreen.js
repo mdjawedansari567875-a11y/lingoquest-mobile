@@ -10,9 +10,9 @@ export default function HomeScreen({ navigation, appLanguage }) {
   if (profile?.banned) {
     return (
       <View style={styles.container}>
-        <Text style={styles.bannedText}>🚫 Your account has been banned by admin.</Text>
+        <Text style={styles.bannedText}>🚫 {t.bannedMessage}</Text>
         <TouchableOpacity style={styles.btn} onPress={signOut}>
-          <Text style={styles.btnText}>Sign Out</Text>
+          <Text style={styles.btnText}>{t.signOut}</Text>
         </TouchableOpacity>
       </View>
     );
@@ -20,7 +20,11 @@ export default function HomeScreen({ navigation, appLanguage }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.welcome}>👋 {profile?.name || "..."}</Text>
+      <TouchableOpacity style={styles.profileBtn} onPress={() => navigation.navigate("Profile")}>
+        <Text style={styles.profileIcon}>👤</Text>
+      </TouchableOpacity>
+
+      <Text style={styles.welcome}>👋 {t.welcome}, {profile?.name || "..."}</Text>
       <View style={styles.pointsBox}>
         <Text style={styles.pointsLabel}>{t.points}</Text>
         <Text style={styles.pointsValue}>{profile?.points ?? 0}</Text>
@@ -43,7 +47,7 @@ export default function HomeScreen({ navigation, appLanguage }) {
         <Text style={styles.btnSecondaryText}>🏆 {t.leaderboard}</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.signOut} onPress={signOut}>
-        <Text style={styles.signOutText}>Sign Out</Text>
+        <Text style={styles.signOutText}>{t.signOut}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -51,7 +55,9 @@ export default function HomeScreen({ navigation, appLanguage }) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 24, backgroundColor: "#fff", justifyContent: "center" },
-  welcome: { fontSize: 24, fontWeight: "bold", marginBottom: 20, textAlign: "center" },
+  profileBtn: { position: "absolute", top: 50, right: 24 },
+  profileIcon: { fontSize: 28 },
+  welcome: { fontSize: 22, fontWeight: "bold", marginBottom: 20, textAlign: "center" },
   pointsBox: { backgroundColor: "#e8ffe0", padding: 20, borderRadius: 16, alignItems: "center", marginBottom: 20 },
   pointsLabel: { fontSize: 16, color: "#58a700" },
   pointsValue: { fontSize: 40, fontWeight: "bold", color: "#58a700" },
