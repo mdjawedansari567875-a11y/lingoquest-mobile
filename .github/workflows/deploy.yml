@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 20
       - run: npm install
-      - run: npx expo export -p web
+      - run: npx expo export -p web --base-path /lingoquest-mobile
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
