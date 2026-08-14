@@ -53,10 +53,58 @@ export const LANGUAGES = [
 ];
 
 export const UI_TEXT = {
-  en: { login: "Log In", signup: "Sign Up", email: "Email", password: "Password", name: "Name", points: "Points", leaderboard: "Leaderboard", playGame: "Play Translation Game", profile: "Profile", badges: "Badges", correct: "Correct! +10 points", wrong: "Wrong!", correctWas: "Correct answer was", selectLanguage: "Select App Language", continue: "Continue", back: "Back", save: "Save", searchLanguage: "Search language...", signOut: "Sign Out", welcome: "Welcome", sessionPoints: "Session", translateFrom: "Translate", rank: "Rank", status: "Status", active: "Active", banned: "Banned", bannedMessage: "Your account has been banned by admin.", editName: "Edit your name", saved: "Saved!" },
-  hi: { login: "लॉग इन करें", signup: "साइन अप करें", email: "ईमेल", password: "पासवर्ड", name: "नाम", points: "पॉइंट्स", leaderboard: "लीडरबोर्ड", playGame: "अनुवाद गेम खेलें", profile: "प्रोफाइल", badges: "बैज", correct: "सही! +10 पॉइंट्स", wrong: "गलत!", correctWas: "सही जवाब था", selectLanguage: "ऐप की भाषा चुनें", continue: "आगे बढ़ें", back: "वापस", save: "सेव करें", searchLanguage: "भाषा खोजें...", signOut: "साइन आउट", welcome: "स्वागत है", sessionPoints: "सेशन", translateFrom: "अनुवाद करें", rank: "रैंक", status: "स्थिति", active: "सक्रिय", banned: "बैन", bannedMessage: "आपका अकाउंट एडमिन द्वारा बैन कर दिया गया है।", editName: "अपना नाम बदलें", saved: "सेव हो गया!" },
-  es: { login: "Iniciar sesión", signup: "Registrarse", email: "Correo", password: "Contraseña", name: "Nombre", points: "Puntos", leaderboard: "Clasificación", playGame: "Jugar juego de traducción", profile: "Perfil", badges: "Insignias", correct: "¡Correcto! +10 puntos", wrong: "¡Incorrecto!", correctWas: "La respuesta correcta era", selectLanguage: "Selecciona el idioma", continue: "Continuar", back: "Atrás", save: "Guardar", searchLanguage: "Buscar idioma...", signOut: "Cerrar sesión", welcome: "Bienvenido", sessionPoints: "Sesión", translateFrom: "Traducir", rank: "Rango", status: "Estado", active: "Activo", banned: "Baneado", bannedMessage: "Tu cuenta ha sido baneada por el administrador.", editName: "Edita tu nombre", saved: "¡Guardado!" },
-  fr: { login: "Connexion", signup: "S'inscrire", email: "E-mail", password: "Mot de passe", name: "Nom", points: "Points", leaderboard: "Classement", playGame: "Jouer au jeu de traduction", profile: "Profil", badges: "Badges", correct: "Correct ! +10 points", wrong: "Faux !", correctWas: "La bonne réponse était", selectLanguage: "Choisir la langue", continue: "Continuer", back: "Retour", save: "Enregistrer", searchLanguage: "Rechercher une langue...", signOut: "Déconnexion", welcome: "Bienvenue", sessionPoints: "Session", translateFrom: "Traduire", rank: "Rang", status: "Statut", active: "Actif", banned: "Banni", bannedMessage: "Votre compte a été banni par l'administrateur.", editName: "Modifier votre nom", saved: "Enregistré !" },
+  en: {
+    login: "Log In", signup: "Sign Up", email: "Email", password: "Password", name: "Name",
+    points: "Points", leaderboard: "Leaderboard", playGame: "Play Translation Game",
+    profile: "Profile", badges: "Badges", correct: "Correct! +10 points", wrong: "Wrong!",
+    correctWas: "Correct answer was", selectLanguage: "Select App Language", continue: "Continue",
+    back: "Back", save: "Save", searchLanguage: "Search language...", signOut: "Sign Out",
+    welcome: "Welcome", sessionPoints: "Session", translateFrom: "Translate", rank: "Rank",
+    status: "Status", active: "Active", banned: "Banned",
+    bannedMessage: "Your account has been banned by admin.", editName: "Edit your name",
+    saved: "Saved!", settings: "Settings", contactSupport: "Contact Support",
+    changeLanguage: "Change Language", logout: "Log Out", supportMessage: "For help, email us at",
+  },
+  hi: {
+    login: "लॉग इन करें", signup: "साइन अप करें", email: "ईमेल", password: "पासवर्ड", name: "नाम",
+    points: "पॉइंट्स", leaderboard: "लीडरबोर्ड", playGame: "अनुवाद गेम खेलें",
+    profile: "प्रोफाइल", badges: "बैज", correct: "सही! +10 पॉइंट्स", wrong: "गलत!",
+    correctWas: "सही जवाब था", selectLanguage: "ऐप की भाषा चुनें", continue: "आगे बढ़ें",
+    back: "वापस", save: "सेव करें", searchLanguage: "भाषा खोजें...", signOut: "साइन आउट",
+    welcome: "स्वागत है", sessionPoints: "सेशन", translateFrom: "अनुवाद करें", rank: "रैंक",
+    status: "स्थिति", active: "सक्रिय", banned: "बैन",
+    bannedMessage: "आपका अकाउंट एडमिन द्वारा बैन कर दिया गया है।", editName: "अपना नाम बदलें",
+    saved: "सेव हो गया!", settings: "सेटिंग्स", contactSupport: "सहायता से संपर्क करें",
+    changeLanguage: "भाषा बदलें", logout: "लॉग आउट", supportMessage: "मदद के लिए ईमेल करें",
+  },
+  es: {
+    login: "Iniciar sesión", signup: "Registrarse", email: "Correo", password: "Contraseña",
+    name: "Nombre", points: "Puntos", leaderboard: "Clasificación",
+    playGame: "Jugar juego de traducción", profile: "Perfil", badges: "Insignias",
+    correct: "¡Correcto! +10 puntos", wrong: "¡Incorrecto!",
+    correctWas: "La respuesta correcta era", selectLanguage: "Selecciona el idioma",
+    continue: "Continuar", back: "Atrás", save: "Guardar", searchLanguage: "Buscar idioma...",
+    signOut: "Cerrar sesión", welcome: "Bienvenido", sessionPoints: "Sesión",
+    translateFrom: "Traducir", rank: "Rango", status: "Estado", active: "Activo",
+    banned: "Baneado", bannedMessage: "Tu cuenta ha sido baneada por el administrador.",
+    editName: "Edita tu nombre", saved: "¡Guardado!", settings: "Configuración",
+    contactSupport: "Contactar soporte", changeLanguage: "Cambiar idioma",
+    logout: "Cerrar sesión", supportMessage: "Para ayuda, escribe a",
+  },
+  fr: {
+    login: "Connexion", signup: "S'inscrire", email: "E-mail", password: "Mot de passe",
+    name: "Nom", points: "Points", leaderboard: "Classement",
+    playGame: "Jouer au jeu de traduction", profile: "Profil", badges: "Badges",
+    correct: "Correct ! +10 points", wrong: "Faux !", correctWas: "La bonne réponse était",
+    selectLanguage: "Choisir la langue", continue: "Continuer", back: "Retour",
+    save: "Enregistrer", searchLanguage: "Rechercher une langue...", signOut: "Déconnexion",
+    welcome: "Bienvenue", sessionPoints: "Session", translateFrom: "Traduire", rank: "Rang",
+    status: "Statut", active: "Actif", banned: "Banni",
+    bannedMessage: "Votre compte a été banni par l'administrateur.",
+    editName: "Modifier votre nom", saved: "Enregistré !", settings: "Paramètres",
+    contactSupport: "Contacter le support", changeLanguage: "Changer de langue",
+    logout: "Déconnexion", supportMessage: "Pour de l'aide, écrivez à",
+  },
 };
 
 // Word bank organized by difficulty tier. Add more entries here to grow the game.
@@ -91,6 +139,7 @@ export const GAME_DATA = [
   { lang: "es", from: "es", to: "en", difficulty: 2, word: "Esperanza", answer: "Hope", options: ["Hope", "Fear", "Anger", "Doubt"] },
 ];
 
+// Picks 10 questions matching the selected app language, scaled by player's points level.
 export function getGameSession(profileLanguage = "en", points = 0, count = 10) {
   let difficulty = 1;
   if (points >= 500) difficulty = 3;
