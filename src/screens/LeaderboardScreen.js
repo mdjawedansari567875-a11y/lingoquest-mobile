@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import { View, Text, FlatList, StyleSheet, TouchableOpacity } from "react-native";
 import { collection, query, orderBy, limit, onSnapshot } from "firebase/firestore";
 import { db } from "../config/firebase";
 import { UI_TEXT } from "../data/translations";
 
-export default function LeaderboardScreen({ appLanguage }) {
+export default function LeaderboardScreen({ navigation, appLanguage }) {
   const t = UI_TEXT[appLanguage] || UI_TEXT.en;
   const [users, setUsers] = useState([]);
 
@@ -18,6 +18,9 @@ export default function LeaderboardScreen({ appLanguage }) {
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity style={styles.backBtn} onPress={() => navigation.navigate("Home")}>
+        <Text style={styles.backText}>‹ {t.back}</Text>
+      </TouchableOpacity>
       <Text style={styles.title}>🏆 {t.leaderboard}</Text>
       <FlatList
         data={users}
@@ -35,7 +38,9 @@ export default function LeaderboardScreen({ appLanguage }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, backgroundColor: "#fff" },
+  container: { flex: 1, padding: 20, paddingTop: 50, backgroundColor: "#fff" },
+  backBtn: { marginBottom: 8 },
+  backText: { fontSize: 16, color: "#1cb0f6", fontWeight: "600" },
   title: { fontSize: 24, fontWeight: "bold", textAlign: "center", marginBottom: 16 },
   row: { flexDirection: "row", justifyContent: "space-between", paddingVertical: 12, borderBottomWidth: 1, borderColor: "#eee" },
   rank: { width: 40, fontWeight: "bold", color: "#999" },
