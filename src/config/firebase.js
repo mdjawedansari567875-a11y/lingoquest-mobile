@@ -4,12 +4,12 @@ import { getFirestore } from "firebase/firestore";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
+  apiKey: "AIzaSyCzvLUtp1m4pqt6k_d7mOvFEcKMpve-PYs",
+  authDomain: "lingoquest-ecf97.firebaseapp.com",
+  projectId: "lingoquest-ecf97",
+  storageBucket: "lingoquest-ecf97.firebasestorage.app",
+  messagingSenderId: "793130950764",
+  appId: "1:793130950764:web:406a970f3cda9bd3a47849"
 };
 
 const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
