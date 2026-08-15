@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "LingoQuest",
+    "slug": "lingoquest-mobile",
+    "version": "1.0.0",
+    "platforms": ["web"],
+    "web": {
+      "bundler": "metro"
+    },
+    "experiments": {
+      "baseUrl": "/lingoquest-mobile"
+    }
+  }
+}
