@@ -5,13 +5,33 @@ import { db } from "../config/firebase";
 import { useAuth } from "../context/AuthContext";
 import { getGameSession, UI_TEXT } from "../data/translations";
 
+function shuffleArray(arr) {
+  return [...arr].sort(() => 0.5 - Math.random());
+}
+
 export default function GameScreen({ navigation, appLanguage }) {
   const t = UI_TEXT[appLanguage] || UI_TEXT.en;
   const { user, profile } = useAuth();
   const [session] = useState(() => getGameSession(appLanguage, profile?.points || 0, 10));
   const [index, setIndex] = useState(0);
-  const [feedback, setFeedback] = useState(null); // null | "correct" | "wrong"
+  const [feedback, setFeedback] = useState(null);
   const [sessionPoints, setSessionPoints] = useState(0);
+  const [shuffledOptions, setShuffledOptions] = useState(() =>
+    session.length ? shuffleArray(session[0].options) : []
+  );
+
+  if (session.length === 0) {
+    return (
+      <View style={styles.container}>
+        <TouchableOpacity style={styles.backBtn} onPress={() => navigation.navigate("Home")}>
+          <Text style={styles.backText}>‹ {t.back}</Text>
+        </TouchableOpacity>
+        <Text style={styles.noData}>
+          Questions for this language are coming soon! Try English or Hindi for now.
+        </Text>
+      </View>
+    );
+  }
 
   const question = session[index];
 
@@ -34,11 +54,13 @@ export default function GameScreen({ navigation, appLanguage }) {
     setTimeout(() => {
       setFeedback(null);
       if (index + 1 < session.length) {
-        setIndex((i) => i + 1);
+        const nextIndex = index + 1;
+        setShuffledOptions(shuffleArray(session[nextIndex].options));
+        setIndex(nextIndex);
       } else {
         navigation.navigate("Home");
       }
-    }, feedback === "wrong" ? 1600 : 800);
+    }, option === question.answer ? 800 : 1600);
   };
 
   return (
@@ -63,7 +85,7 @@ export default function GameScreen({ navigation, appLanguage }) {
       )}
 
       <View style={styles.options}>
-        {question.options.map((opt) => (
+        {shuffledOptions.map((opt) => (
           <TouchableOpacity key={opt} style={styles.optionBtn} onPress={() => handleAnswer(opt)} disabled={!!feedback}>
             <Text style={styles.optionText}>{opt}</Text>
           </TouchableOpacity>
@@ -90,4 +112,5 @@ const styles = StyleSheet.create({
   optionBtn: { backgroundColor: "#f7f7f7", borderWidth: 2, borderColor: "#e5e5e5", padding: 16, borderRadius: 12, marginBottom: 12 },
   optionText: { fontSize: 18, textAlign: "center", fontWeight: "600" },
   sessionPoints: { textAlign: "center", marginTop: 12, color: "#58a700", fontWeight: "bold" },
+  noData: { textAlign: "center", fontSize: 16, color: "#999", marginTop: 100, paddingHorizontal: 20 },
 });
