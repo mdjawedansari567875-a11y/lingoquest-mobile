@@ -1,4 +1,5 @@
 import React from "react";
+import { View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useAuth } from "../context/AuthContext";
@@ -15,15 +16,19 @@ import SettingsScreen from "../screens/SettingsScreen";
 
 const Stack = createNativeStackNavigator();
 
+function LoadingScreen() {
+  return <View style={{ flex: 1, backgroundColor: "#fff" }} />;
+}
+
 export default function AppNavigator() {
   const { user, profile, loadingAuth } = useAuth();
-
-  if (loadingAuth) return null;
 
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {!user ? (
+        {loadingAuth ? (
+          <Stack.Screen name="Loading" component={LoadingScreen} />
+        ) : !user ? (
           <>
             <Stack.Screen name="Login">
               {(props) => <LoginScreen {...props} appLanguage="en" />}
@@ -32,7 +37,9 @@ export default function AppNavigator() {
               {(props) => <SignupScreen {...props} appLanguage="en" />}
             </Stack.Screen>
           </>
-        ) : !profile ? null : !profile.language ? (
+        ) : !profile ? (
+          <Stack.Screen name="Loading" component={LoadingScreen} />
+        ) : !profile.language ? (
           <Stack.Screen name="LanguageSelect">
             {(props) => <LanguageSelectScreen {...props} />}
           </Stack.Screen>
@@ -61,4 +68,4 @@ export default function AppNavigator() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+                }
